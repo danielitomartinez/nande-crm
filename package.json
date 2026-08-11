@@ -1,8 +1,8 @@
 {
-  "name": "wacrm",
+  "name": "nande-crm",
   "version": "0.8.0",
   "private": true,
-  "description": "Self-hostable CRM template for WhatsApp built on Next.js and Supabase — shared inbox, contacts, sales pipelines, broadcasts, and no-code automations.",
+  "description": "Ñande CRM — CRM para WhatsApp Business con bandeja compartida, contactos, pipelines de ventas, difusiones y automatizaciones.",
   "license": "MIT",
   "author": "Arnas Donauskas",
   "homepage": "https://github.com/ArnasDon/wacrm",
