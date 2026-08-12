@@ -28,21 +28,24 @@ export interface CurrencyOption {
  * list to offer more — nothing else needs to change.
  */
 export const CURRENCIES: CurrencyOption[] = [
+  { code: "PYG", label: "Guaraní Paraguayo", symbol: "₲" },
   { code: "USD", label: "US Dollar", symbol: "$" },
   { code: "EUR", label: "Euro", symbol: "€" },
   { code: "GBP", label: "British Pound", symbol: "£" },
+  { code: "ARS", label: "Peso Argentino", symbol: "$" },
+  { code: "BRL", label: "Real Brasileño", symbol: "R$" },
+  { code: "CLP", label: "Peso Chileno", symbol: "$" },
+  { code: "COP", label: "Peso Colombiano", symbol: "$" },
+  { code: "MXN", label: "Peso Mexicano", symbol: "$" },
   { code: "INR", label: "Indian Rupee", symbol: "₹" },
   { code: "AUD", label: "Australian Dollar", symbol: "A$" },
   { code: "CAD", label: "Canadian Dollar", symbol: "C$" },
-  { code: "BRL", label: "Brazilian Real", symbol: "R$" },
   { code: "JPY", label: "Japanese Yen", symbol: "¥" },
   { code: "CNY", label: "Chinese Yuan", symbol: "¥" },
   { code: "AED", label: "UAE Dirham", symbol: "د.إ" },
   { code: "ZAR", label: "South African Rand", symbol: "R" },
   { code: "NGN", label: "Nigerian Naira", symbol: "₦" },
   { code: "SGD", label: "Singapore Dollar", symbol: "S$" },
-  { code: "MXN", label: "Mexican Peso", symbol: "$" },
-  { code: "COP", label: "Colombian Peso", symbol: "$" },
 ];
 
 /**
