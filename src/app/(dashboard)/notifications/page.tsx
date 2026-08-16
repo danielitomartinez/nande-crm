@@ -161,28 +161,63 @@ export default function NotificationsPage() {
     );
   }
 
+  const testBrowserNotification = () => {
+    if (!('Notification' in window)) {
+      toast.error("Este navegador no soporta notificaciones");
+      return;
+    }
+    if (Notification.permission !== 'granted') {
+      Notification.requestPermission().then((res) => {
+        if (res === 'granted') {
+          new Notification('Ñande CRM', {
+            body: '¡Notificaciones del navegador activadas con éxito!',
+            icon: '/icons/icon-192.png',
+          });
+        } else {
+          toast.error("Permiso de notificaciones denegado en el navegador");
+        }
+      });
+    } else {
+      new Notification('Ñande CRM', {
+        body: '¡Notificación de prueba enviada a tu dispositivo!',
+        icon: '/icons/icon-192.png',
+      });
+      toast.success("Notificación de prueba enviada al sistema");
+    }
+  };
+
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-foreground">Notifications</h1>
+          <h1 className="text-2xl font-bold text-foreground">Notificaciones</h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            Conversations other teammates assign to you show up here.
+            Las asignaciones de conversaciones y mensajes nuevos aparecen aquí y en tu navegador.
           </p>
         </div>
-        <Button
-          variant="outline"
-          size="sm"
-          disabled={unreadIds.length === 0 || markingAll}
-          onClick={markAllRead}
-        >
-          {markingAll ? (
-            <Loader2 className="h-4 w-4 animate-spin" />
-          ) : (
-            <CheckCheck className="h-4 w-4" />
-          )}
-          Mark all as read
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={testBrowserNotification}
+          >
+            <Bell className="mr-1.5 h-4 w-4 text-primary" />
+            Probar Notificación
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={unreadIds.length === 0 || markingAll}
+            onClick={markAllRead}
+          >
+            {markingAll ? (
+              <Loader2 className="mr-1.5 h-4 w-4 animate-spin" />
+            ) : (
+              <CheckCheck className="mr-1.5 h-4 w-4" />
+            )}
+            Marcar todas como leídas
+          </Button>
+        </div>
       </div>
 
       {notifications.length === 0 ? (
